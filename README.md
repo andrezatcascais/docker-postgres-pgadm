@@ -32,4 +32,10 @@
 5. To view the containers, open a new terminal tab and type:
    ```bash
    docker ps
-   ```  
+   ```
+6. Verify that the directory being mounted in the container has the correct permissions. In your docker-compose.yml, you're mounting the host directory ./data/pgadmin to /var/lib/pgadmin in the container. Ensure that the user running Docker has read and write permissions for this directory.
+   ```bash
+   cd postgres-env-dev
+   sudo chmod -R 777 ./data/pgadmin/
+   ```
+   
