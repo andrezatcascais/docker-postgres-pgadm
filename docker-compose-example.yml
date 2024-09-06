@@ -1,0 +1,32 @@
+version: "3.8"
+services:
+  dcs-postgres:
+    image: postgres:15.3-alpine
+    # platform: linux/x86_64 # Uncomment this line if using a Macbook with M1 or M2
+    container_name: dcs-postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+  dcs-pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: dcs-pgadmin
+    restart: always
+    depends_on:
+      - dcs-postgres
+    environment:
+      PGADMIN_DEFAULT_EMAIL: user@localhost.com
+      PGADMIN_DEFAULT_PASSWORD: admin12345
+    ports:
+      - 8080:80
+    volumes:
+      - ./data/pgadmin:/var/lib/pgadmin    
+
+networks:
+  default:
+    name: local-network
+    external: true
