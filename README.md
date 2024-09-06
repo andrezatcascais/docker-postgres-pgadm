@@ -85,5 +85,5 @@ Once finished, in the **Object Explorer** tab, you should see your new database 
 
 ![alt text](assets/image-8.png)
 
-## Done! We've reached the end, and now you have an environment with PostgreSQL and the pgAdmin web interface. :clap: :rocket:
+### Done! We've reached the end, and now you have an environment with PostgreSQL and the pgAdmin web interface. :clap: :rocket:
    
