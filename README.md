@@ -4,7 +4,7 @@
 
 ### To run this script is necessary:
 - docker-compose-example.yml
-- setup-docker-even.sh
+- setup-docker-eve.sh
 
 ### Instructions:
 
